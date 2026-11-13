@@ -13,14 +13,23 @@ npm run build
 npm start                 # http://localhost:8099
 ```
 
-`server.js` no tiene dependencias (solo `node:*`) y escucha únicamente en `127.0.0.1`.
-Para cambiar el puerto: `npm start -- --puerto 9000`, o la variable `PORT`.
+`server.js` no tiene dependencias (solo `node:*`). Para cambiar el puerto:
+`npm start -- --puerto 9000`, o la variable `PORT`.
+
+Escucha en `0.0.0.0`, así que al arrancar imprime también la IP de tu red local: el portal
+familiar está diseñado a 390×844 y se ve mucho mejor abriéndolo en un teléfono de verdad que
+estrechando la ventana del navegador.
 
 **Para desarrollar** (recarga en caliente, puerto 5180):
 
 ```bash
 npm run dev
 ```
+
+**Para publicarlo**, ver [`docs/despliegue.md`](docs/despliegue.md): va en Railway, con
+`Dockerfile` en dos etapas y healthcheck en `/salud`. La URL queda **abierta, sin contraseña**,
+porque todos los datos son ficticios; si algún día se le cargan datos reales, hay que poner
+contraseña antes de volver a desplegar.
 
 ## Rutas
 
@@ -43,6 +52,10 @@ y sus usos en `src/App.jsx` y `src/familiar/PortalFamiliar.jsx`.
 
 ```
 diseno-original/        Los .dc.html de Claude Design + los dos .md de lineamientos (referencia)
+docs/despliegue.md      Cómo se publica en Railway y por qué va sin contraseña
+Dockerfile              Build en dos etapas; la imagen final es dist/ + server.js, sin node_modules
+railway.json            Builder y healthcheck (/salud)
+public/robots.txt       Fuera de buscadores, igual que la cabecera X-Robots-Tag
 src/
   config.js             Props configurables del prototipo (color de acento, vista inicial)
   data/alba.js          Modelo de datos completo: residentes, eMAR, facturación, signos, módulos
