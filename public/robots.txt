@@ -1,0 +1,4 @@
+# Alba es un prototipo con datos ficticios, pero no tiene por qué salir en un
+# buscador. El servidor manda además la cabecera X-Robots-Tag: noindex.
+User-agent: *
+Disallow: /

@@ -1,0 +1,10 @@
+# El contexto que se manda al builder. Fuera todo lo que no hace falta para
+# compilar: el build es más rápido y la imagen no carga con los `.dc.html`
+# originales del lienzo de diseño ni con la configuración local del editor.
+node_modules
+dist
+.git
+.gitignore
+.claude
+diseno-original
+*.md
