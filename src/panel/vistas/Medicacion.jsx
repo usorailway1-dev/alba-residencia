@@ -1,9 +1,9 @@
 const S = {
-  resumen: { display: 'flex', flexWrap: 'wrap', gap: 16, alignItems: 'center', background: '#FFFFFF', border: '1px solid #E3E7EC', borderRadius: 14, padding: '18px 20px' },
-  barra: { height: 8, borderRadius: 4, background: '#EEF1F4', overflow: 'hidden' },
-  tabla: { background: '#FFFFFF', border: '1px solid #E3E7EC', borderRadius: 14, overflowX: 'auto' },
-  aviso: { display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center', padding: '14px 16px', borderRadius: 12, background: '#FFF1D6', color: '#5E3A00', fontSize: 14 },
-  verInv: { minHeight: 40, padding: '0 14px', borderRadius: 9, border: '1px solid #E0C48A', background: '#FFFFFF', color: '#5E3A00', fontWeight: 600, fontSize: 13, whiteSpace: 'nowrap', marginLeft: 'auto' }
+  resumen: { display: 'flex', flexWrap: 'wrap', gap: 16, alignItems: 'center', background: '#FFFFFF', border: '1px solid #E5E1D5', borderRadius: 14, padding: '18px 20px' },
+  barra: { height: 8, borderRadius: 4, background: '#EEEBE0', overflow: 'hidden' },
+  tabla: { background: '#FFFFFF', border: '1px solid #E5E1D5', borderRadius: 14, overflowX: 'auto' },
+  aviso: { display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center', padding: '14px 16px', borderRadius: 12, background: '#FBF0D5', color: '#5E3A00', fontSize: 14 },
+  verInv: { minHeight: 40, padding: '0 14px', borderRadius: 9, border: '1px solid #C9A86A', background: '#FFFFFF', color: '#5E3A00', fontWeight: 600, fontSize: 13, whiteSpace: 'nowrap', marginLeft: 'auto' }
 }
 
 export default function Medicacion({ accent, medRows, givenCount, schedCount, givenPct, avisoInventario, irInventario }) {
@@ -16,7 +16,7 @@ export default function Medicacion({ accent, medRows, givenCount, schedCount, gi
           </span>
           <div style={S.barra}><div style={{ height: 8, width: givenPct, background: accent }} /></div>
         </div>
-        <span style={{ fontSize: 13, color: '#5B6675' }}>
+        <span style={{ fontSize: 13, color: '#6A6C5A' }}>
           Cada registro guarda hora, usuario y firma. El inventario se descuenta automáticamente.
         </span>
       </section>
@@ -35,7 +35,7 @@ export default function Medicacion({ accent, medRows, givenCount, schedCount, gi
                 <td>
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
                     <span style={{ fontWeight: 600 }}>{m.res}</span>
-                    <span style={{ fontSize: 13, color: '#5B6675' }}>Hab. {m.room} · Alergia: {m.alergia}</span>
+                    <span style={{ fontSize: 13, color: '#6A6C5A' }}>Hab. {m.room} · Alergia: {m.alergia}</span>
                   </div>
                 </td>
                 <td style={{ fontWeight: 600 }}>{m.med}</td>
@@ -49,9 +49,9 @@ export default function Medicacion({ accent, medRows, givenCount, schedCount, gi
                       Administrar
                     </button>
                   )}
-                  {(m.isGiven || m.prnTomada) && <span style={{ fontSize: 13, color: '#3D4652' }}>{m.givenAt} · L. Pérez</span>}
+                  {(m.isGiven || m.prnTomada) && <span style={{ fontSize: 13, color: '#474A3A' }}>{m.givenAt} · L. Pérez</span>}
                   {m.puedeTomar && (
-                    <button type="button" onClick={m.tomar} style={{ minHeight: 40, padding: '0 14px', borderRadius: 9, border: '1px solid #DCE1E7', background: '#FFFFFF', color: '#1B2430', fontWeight: 600, fontSize: 13 }}>
+                    <button type="button" onClick={m.tomar} style={{ minHeight: 40, padding: '0 14px', borderRadius: 9, border: '1px solid #DCD6C6', background: '#FFFFFF', color: '#262A1B', fontWeight: 600, fontSize: 13 }}>
                       Registrar toma
                     </button>
                   )}

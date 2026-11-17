@@ -1,6 +1,11 @@
 /*
- * Servidor del prototipo Alba. Solo sirve `dist/` — no hay backend: todo el
- * estado del prototipo vive en el navegador.
+ * Servidor del prototipo de Casa Los Olivos. Solo sirve `dist/` — no hay
+ * backend: todo el estado del prototipo vive en el navegador.
+ *
+ * La carpeta, el paquete y el repositorio siguen llamándose `alba-residencia`,
+ * que era el nombre del prototipo antes de adoptar la marca del cliente.
+ * Renombrarlos obligaría a reconectar el servicio de Railway, y no vale la
+ * pena: lo que se ve en pantalla ya dice Casa Los Olivos.
  *
  * Sin dependencias a propósito (solo `node:*`), para que arranque con un
  * `npm start` aunque no se haya instalado nada más. Hace tres cosas que un
@@ -121,11 +126,11 @@ createServer((req, res) => {
   enviar(req, res, INDEX)
 }).listen(PUERTO, '0.0.0.0', () => {
   if (ALOJADO) {
-    console.log(`Alba escuchando en el puerto ${PUERTO}.`)
+    console.log(`Casa Los Olivos escuchando en el puerto ${PUERTO}.`)
     return
   }
   const ip = ipDeLaRed()
-  console.log(`\nAlba escuchando en:\n`)
+  console.log(`\nCasa Los Olivos escuchando en:\n`)
   console.log(`  Panel            http://localhost:${PUERTO}/`)
   console.log(`  Portal familiar  http://localhost:${PUERTO}/familiar`)
   if (ip) {

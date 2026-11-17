@@ -20,13 +20,13 @@ export default function Reportes({ accent, rep }) {
           <button key={t.id} type="button" onClick={t.ir} aria-pressed={t.activo ? 'true' : 'false'}
             style={{
               ...S.tab,
-              border: `1px solid ${t.activo ? '#12322F' : '#DCE1E7'}`,
-              background: t.activo ? '#12322F' : '#FFFFFF',
-              color: t.activo ? '#FFFFFF' : '#1B2430'
+              border: `1px solid ${t.activo ? '#3A4523' : '#DCD6C6'}`,
+              background: t.activo ? '#3A4523' : '#FFFFFF',
+              color: t.activo ? '#FFFFFF' : '#262A1B'
             }}>
             {t.label}
             {t.aviso > 0 && (
-              <span style={{ ...S.aviso, background: t.activo ? 'rgba(255,255,255,.2)' : '#FDE8E6', color: t.activo ? '#FFFFFF' : '#B42318' }}>
+              <span style={{ ...S.aviso, background: t.activo ? 'rgba(255,255,255,.2)' : '#FBE7E3', color: t.activo ? '#FFFFFF' : '#B42318' }}>
                 {t.aviso}
               </span>
             )}

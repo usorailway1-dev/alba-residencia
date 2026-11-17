@@ -21,7 +21,7 @@ export default function Switcher({ modo = 'fijo' }) {
     : { ...BASE, position: 'fixed', right: 16, bottom: 16, zIndex: 50, boxShadow: '0 6px 20px rgba(0,0,0,.18)' }
 
   const item = (to, label) => (
-    <Link to={to} style={{ ...LINK, background: pathname === to ? '#0E7C6B' : 'transparent', color: '#FFFFFF' }}>
+    <Link to={to} style={{ ...LINK, background: pathname === to ? '#5A6B32' : 'transparent', color: '#FFFFFF' }}>
       {label}
     </Link>
   )

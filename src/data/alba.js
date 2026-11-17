@@ -1,13 +1,17 @@
-// Modelo de datos del prototipo "Alba" — datos ficticios de ejemplo.
+// Modelo de datos del prototipo de Casa Los Olivos — datos ficticios de ejemplo.
 // Extraído literalmente de renderVals() en diseno-original/Main.dc.html
 // y diseno-original/PortalFamiliar.dc.html.
+//
+// Los residentes, el personal y las cuentas son inventados: el prototipo
+// original hablaba de una "Residencia Los Álamos" igual de ficticia. Lo único
+// que cambió al adoptar la marca de Casa Los Olivos fue el nombre y la paleta.
 
 export const tone = {
-  ok:   { bg: '#E3F3EF', fg: '#0B6B5C' },
-  warn: { bg: '#FFF1D6', fg: '#8A5300' },
-  bad:  { bg: '#FDE8E6', fg: '#B42318' },
-  info: { bg: '#E8EEF9', fg: '#2B4C8C' },
-  gray: { bg: '#EEF1F4', fg: '#3D4652' }
+  ok:   { bg: '#E8EEDB', fg: '#4C6B27' },
+  warn: { bg: '#FBF0D5', fg: '#8A5300' },
+  bad:  { bg: '#FBE7E3', fg: '#B42318' },
+  info: { bg: '#E9ECF2', fg: '#3C5578' },
+  gray: { bg: '#EEEBE0', fg: '#474A3A' }
 }
 
 export const money = (n) => '$' + n.toLocaleString('es-MX') + ' MXN'
@@ -152,16 +156,16 @@ export const titles = {
 // ---- Portal familiar ----
 
 export const diaFamiliar = [
-  { title: 'Desayunó completo', detail: '08:30 · Avena, fruta y té', dot: '#0E7C6B' },
-  { title: 'Medicamentos de la mañana', detail: 'Administrados a las 08:10', dot: '#0E7C6B' },
-  { title: 'Taller de pintura', detail: '10:00 · Sala de usos múltiples', dot: '#2F5DA8' },
-  { title: 'Revisión médica', detail: '11:30 · Dra. Ana Morales', dot: '#B4541A' }
+  { title: 'Desayunó completo', detail: '08:30 · Avena, fruta y té', dot: '#5A6B32' },
+  { title: 'Medicamentos de la mañana', detail: 'Administrados a las 08:10', dot: '#5A6B32' },
+  { title: 'Taller de pintura', detail: '10:00 · Sala de usos múltiples', dot: '#3C5578' },
+  { title: 'Revisión médica', detail: '11:30 · Dra. Ana Morales', dot: '#9A5B1C' }
 ]
 
 export const mensajesFamiliar = [
-  { who: 'Enf. Laura Pérez', time: '09:15', text: 'Buenos días. Carmen durmió bien y desayunó completo. Le avisamos después de la revisión médica.', align: 'flex-start', bg: '#FFFFFF', fg: '#1B2430' },
-  { who: 'Tú', time: '09:20', text: 'Gracias. ¿Necesita que le llevemos algo hoy en la visita?', align: 'flex-end', bg: '#12322F', fg: '#FFFFFF' },
-  { who: 'Enf. Laura Pérez', time: '09:24', text: 'Si pueden, crema hidratante y un suéter ligero. Todo lo demás está cubierto.', align: 'flex-start', bg: '#FFFFFF', fg: '#1B2430' }
+  { who: 'Enf. Laura Pérez', time: '09:15', text: 'Buenos días. Carmen durmió bien y desayunó completo. Le avisamos después de la revisión médica.', align: 'flex-start', bg: '#FFFFFF', fg: '#262A1B' },
+  { who: 'Tú', time: '09:20', text: 'Gracias. ¿Necesita que le llevemos algo hoy en la visita?', align: 'flex-end', bg: '#3A4523', fg: '#FFFFFF' },
+  { who: 'Enf. Laura Pérez', time: '09:24', text: 'Si pueden, crema hidratante y un suéter ligero. Todo lo demás está cubierto.', align: 'flex-start', bg: '#FFFFFF', fg: '#262A1B' }
 ]
 
 export const pagosFamiliar = [
@@ -177,7 +181,7 @@ export const visitaInicial = 'Hoy, 17:00 · Patricia y Daniel Ruiz'
 /* Datos para la transferencia SPEI. Ficticios, pero con la forma real: una
    CLABE son 18 dígitos (3 banco + 3 plaza + 11 cuenta + 1 verificador). */
 export const datosSpei = {
-  beneficiario: 'Residencia Los Álamos S.A. de C.V.',
+  beneficiario: 'Casa Los Olivos S.A. de C.V.',
   banco: 'BBVA México',
   clabe: '012180012345678904',
   referencia: 'ALB-103A-NOV26',

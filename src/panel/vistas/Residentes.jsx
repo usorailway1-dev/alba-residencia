@@ -1,8 +1,8 @@
 const S = {
   barra: { display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 12 },
-  tabla: { background: '#FFFFFF', border: '1px solid #E3E7EC', borderRadius: 14, overflowX: 'auto' },
-  avatar: { width: 38, height: 38, borderRadius: 19, background: '#E3F0EE', color: '#0B5A4E', fontWeight: 700, fontSize: 14, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
-  verFicha: { minHeight: 40, padding: '0 14px', borderRadius: 9, border: '1px solid #DCE1E7', background: '#FFFFFF', color: '#1B2430', fontWeight: 600, fontSize: 13 }
+  tabla: { background: '#FFFFFF', border: '1px solid #E5E1D5', borderRadius: 14, overflowX: 'auto' },
+  avatar: { width: 38, height: 38, borderRadius: 19, background: '#E8EEDB', color: '#44511F', fontWeight: 700, fontSize: 14, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+  verFicha: { minHeight: 40, padding: '0 14px', borderRadius: 9, border: '1px solid #DCD6C6', background: '#FFFFFF', color: '#262A1B', fontWeight: 600, fontSize: 13 }
 }
 
 export default function Residentes({ accent, filters, resList, onNuevo }) {
@@ -42,7 +42,7 @@ export default function Residentes({ accent, filters, resList, onNuevo }) {
                     <div style={S.avatar}>{r.ini}</div>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <span style={{ fontWeight: 600 }}>{r.name}</span>
-                      <span style={{ fontSize: 13, color: '#5B6675' }}>{r.age} años · Ingreso {r.ingreso}</span>
+                      <span style={{ fontSize: 13, color: '#6A6C5A' }}>{r.age} años · Ingreso {r.ingreso}</span>
                     </div>
                   </div>
                 </td>

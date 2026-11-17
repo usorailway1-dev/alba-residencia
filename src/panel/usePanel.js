@@ -160,9 +160,9 @@ export function usePanel() {
       id, label,
       pressed: fil === id ? 'true' : 'false',
       pick: () => setFil(id),
-      bg: fil === id ? '#12322F' : '#FFFFFF',
-      fg: fil === id ? '#FFFFFF' : '#1B2430',
-      border: fil === id ? '#12322F' : '#DCE1E7'
+      bg: fil === id ? '#3A4523' : '#FFFFFF',
+      fg: fil === id ? '#FFFFFF' : '#262A1B',
+      border: fil === id ? '#3A4523' : '#DCD6C6'
     }))
   const resList = todos
     .filter((r) => fil === 'todos' || r.t === fil)
@@ -203,10 +203,10 @@ export function usePanel() {
     const gHigh = Number(glu) >= 180
     return {
       id, name: porId[id].name, pa, fc, t: Number(t).toFixed(1), glu, spo,
-      paFg: paBad ? tone.bad.fg : paWarn ? tone.warn.fg : '#1B2430',
+      paFg: paBad ? tone.bad.fg : paWarn ? tone.warn.fg : '#262A1B',
       paW: (paBad || paWarn) ? 700 : 400,
-      tFg: tHigh ? tone.warn.fg : '#1B2430', tW: tHigh ? 700 : 400,
-      gFg: gHigh ? tone.warn.fg : '#1B2430', gW: gHigh ? 700 : 400
+      tFg: tHigh ? tone.warn.fg : '#262A1B', tW: tHigh ? 700 : 400,
+      gFg: gHigh ? tone.warn.fg : '#262A1B', gW: gHigh ? 700 : 400
     }
   }
   /* Un registro guardado reemplaza la toma de las 07:00 del residente; si es
@@ -252,10 +252,10 @@ export function usePanel() {
   const pctOcup = Math.round(ocupadas / 48 * 100)
   const nIncidentes = 1 + incidentes.length
   const kpis = [
-    { label: 'Ocupación', value: `${ocupadas} / 48`, sub: `${pctOcup} % de camas ocupadas · 2 ingresos en proceso`, pct: pctOcup + '%', bar: accent, color: '#1B2430' },
-    { label: 'Medicación del turno', value: givenCount + ' / ' + sched.length, sub: late > 0 ? late + ' retrasadas' : 'Ronda al día', pct: Math.round(givenCount / sched.length * 100) + '%', bar: accent, color: '#1B2430' },
+    { label: 'Ocupación', value: `${ocupadas} / 48`, sub: `${pctOcup} % de camas ocupadas · 2 ingresos en proceso`, pct: pctOcup + '%', bar: accent, color: '#262A1B' },
+    { label: 'Medicación del turno', value: givenCount + ' / ' + sched.length, sub: late > 0 ? late + ' retrasadas' : 'Ronda al día', pct: Math.round(givenCount / sched.length * 100) + '%', bar: accent, color: '#262A1B' },
     { label: 'Alertas activas', value: String(alerts.length), sub: `${nIncidentes} incidente${nIncidentes > 1 ? 's' : ''} · signos fuera de rango`, pct: '30%', bar: '#B42318', color: '#B42318' },
-    { label: 'Por cobrar (noviembre)', value: money(due).replace(' MXN', ''), sub: '1 cuenta vencida', pct: Math.round(due / tot * 100) + '%', bar: '#B4541A', color: '#1B2430' }
+    { label: 'Por cobrar (noviembre)', value: money(due).replace(' MXN', ''), sub: '1 cuenta vencida', pct: Math.round(due / tot * 100) + '%', bar: '#9A5B1C', color: '#262A1B' }
   ]
 
   // --- Buscador del encabezado ---

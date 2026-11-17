@@ -1,12 +1,23 @@
-# Desplegar Alba en Railway
+# Desplegar en Railway
 
-Alba es una aplicación de una sola página: no hay backend ni base de datos. Lo único que corre
-en el servidor es `server.js`, que sirve `dist/` y devuelve `index.html` en las rutas de la SPA.
+Es una aplicación de una sola página: no hay backend ni base de datos. Lo único que corre en el
+servidor es `server.js`, que sirve `dist/` y devuelve `index.html` en las rutas de la SPA.
+
+> La carpeta, el paquete y el repositorio se llaman `alba-residencia`, que era el nombre del
+> prototipo antes de adoptar la marca de Casa Los Olivos. Se quedan así a propósito:
+> renombrarlos obligaría a reconectar el servicio en Railway y no cambia nada de lo que se ve.
 
 **La URL va a quedar abierta, sin contraseña.** Es una decisión tomada a propósito: todos los
-datos son ficticios (residencia inventada, seis residentes inventados, diez empleados
-inventados) y no hay nada de ningún cliente. Lo único que se hace es mantenerlo fuera de los
-buscadores, con `robots.txt` y la cabecera `X-Robots-Tag: noindex`.
+datos son ficticios (seis residentes inventados, diez empleados inventados) y no hay nada de
+ningún cliente. Lo único que se hace es mantenerlo fuera de los buscadores, con `robots.txt` y
+la cabecera `X-Robots-Tag: noindex`.
+
+> Ojo con una cosa que cambió: ahora el prototipo lleva **la marca de un cliente real**, y el
+> repositorio es **público**. Los datos siguen siendo inventados, así que no hay riesgo de
+> filtrar nada, pero cualquiera que dé con la URL ve una plataforma con el nombre y el logo de
+> Casa Los Olivos. Si eso incomoda al cliente, hay dos arreglos de diez minutos: poner la
+> contraseña (el patrón está en `portal-incentivos-anfora/server.js`) o pasar el repositorio a
+> privado desde Settings en GitHub.
 
 > Si algún día se le cargan datos reales —de Diltex, de Ánfora o de quien sea— **hay que poner
 > contraseña antes de volver a desplegar**. El patrón está hecho y probado en

@@ -1,10 +1,10 @@
 const S = {
-  aviso: { display: 'flex', flexWrap: 'wrap', gap: 10, alignItems: 'center', padding: '14px 16px', borderRadius: 12, fontSize: 14, background: '#FFF1D6', color: '#5E3A00' },
+  aviso: { display: 'flex', flexWrap: 'wrap', gap: 10, alignItems: 'center', padding: '14px 16px', borderRadius: 12, fontSize: 14, background: '#FBF0D5', color: '#5E3A00' },
   kpiGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: 16 },
-  kpi: { background: '#FFFFFF', border: '1px solid #E3E7EC', borderRadius: 14, padding: '18px 20px', display: 'flex', flexDirection: 'column', gap: 6 },
-  kpiLabel: { fontSize: 13, fontWeight: 600, color: '#5B6675' },
+  kpi: { background: '#FFFFFF', border: '1px solid #E5E1D5', borderRadius: 14, padding: '18px 20px', display: 'flex', flexDirection: 'column', gap: 6 },
+  kpiLabel: { fontSize: 13, fontWeight: 600, color: '#6A6C5A' },
   kpiValue: { fontSize: 26, fontWeight: 800, letterSpacing: '-.02em' },
-  tarjeta: { background: '#FFFFFF', border: '1px solid #E3E7EC', borderRadius: 14, overflowX: 'auto' },
+  tarjeta: { background: '#FFFFFF', border: '1px solid #E5E1D5', borderRadius: 14, overflowX: 'auto' },
   cabecera: { padding: '18px 20px 6px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'baseline', gap: 12 },
   h2: { margin: 0, fontSize: 18, fontWeight: 700 },
   chip: { padding: '4px 10px', borderRadius: 999, fontSize: 13, fontWeight: 700, whiteSpace: 'nowrap' },
@@ -31,22 +31,22 @@ export default function Financieros({
         <div style={S.kpi}>
           <span style={S.kpiLabel}>Facturado en noviembre</span>
           <span style={S.kpiValue}>{facturado}</span>
-          <span style={{ fontSize: 13, color: '#5B6675' }}>{totalCuentas} cuentas emitidas</span>
+          <span style={{ fontSize: 13, color: '#6A6C5A' }}>{totalCuentas} cuentas emitidas</span>
         </div>
         <div style={S.kpi}>
           <span style={S.kpiLabel}>Cobrado</span>
-          <span style={{ ...S.kpiValue, color: '#0B6B5C' }}>{cobrado}</span>
-          <span style={{ fontSize: 13, color: '#5B6675' }}>{pctCobranza} % de lo facturado, al día 9</span>
+          <span style={{ ...S.kpiValue, color: '#4C6B27' }}>{cobrado}</span>
+          <span style={{ fontSize: 13, color: '#6A6C5A' }}>{pctCobranza} % de lo facturado, al día 9</span>
         </div>
         <div style={S.kpi}>
           <span style={S.kpiLabel}>Por cobrar</span>
-          <span style={{ ...S.kpiValue, color: '#B4541A' }}>{porCobrar}</span>
-          <span style={{ fontSize: 13, color: '#5B6675' }}>incluye lo que aún no vence</span>
+          <span style={{ ...S.kpiValue, color: '#9A5B1C' }}>{porCobrar}</span>
+          <span style={{ fontSize: 13, color: '#6A6C5A' }}>incluye lo que aún no vence</span>
         </div>
         <div style={S.kpi}>
           <span style={S.kpiLabel}>Cartera vencida</span>
-          <span style={{ ...S.kpiValue, color: nVencidas ? '#B42318' : '#1B2430' }}>{carteraVencida}</span>
-          <span style={{ fontSize: 13, color: '#5B6675' }}>
+          <span style={{ ...S.kpiValue, color: nVencidas ? '#B42318' : '#262A1B' }}>{carteraVencida}</span>
+          <span style={{ fontSize: 13, color: '#6A6C5A' }}>
             {nVencidas === 0 ? 'Sin cuentas vencidas' : `${nVencidas} cuenta${nVencidas > 1 ? 's' : ''} fuera de plazo`}
           </span>
         </div>
@@ -55,7 +55,7 @@ export default function Financieros({
       <section style={S.tarjeta}>
         <div style={S.cabecera}>
           <h2 style={S.h2}>Cuentas de noviembre</h2>
-          <span style={{ fontSize: 13, color: '#5B6675' }}>
+          <span style={{ fontSize: 13, color: '#6A6C5A' }}>
             CFDI 4.0 timbrados: {timbradas} de {totalCuentas}
           </span>
         </div>
@@ -72,16 +72,16 @@ export default function Financieros({
                 <td>
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
                     <span style={{ fontWeight: 600 }}>{c.nombre}</span>
-                    <span style={{ fontSize: 13, color: '#5B6675' }}>Hab. {c.habitacion}</span>
+                    <span style={{ fontSize: 13, color: '#6A6C5A' }}>Hab. {c.habitacion}</span>
                   </div>
                 </td>
                 <td style={{ whiteSpace: 'nowrap' }}>{c.montoTexto}</td>
                 <td style={{ whiteSpace: 'nowrap' }}>{c.pagadoTexto}</td>
-                <td style={{ whiteSpace: 'nowrap', fontWeight: c.saldo > 0 ? 700 : 400, color: c.saldo > 0 ? '#B4541A' : '#1B2430' }}>
+                <td style={{ whiteSpace: 'nowrap', fontWeight: c.saldo > 0 ? 700 : 400, color: c.saldo > 0 ? '#9A5B1C' : '#262A1B' }}>
                   {c.saldoTexto}
                 </td>
                 <td><span style={{ ...S.chip, background: c.bg, color: c.fg }}>{c.estado}</span></td>
-                <td style={{ fontSize: 13, color: c.cfdi ? '#0B6B5C' : '#8A5300', fontWeight: 600 }}>
+                <td style={{ fontSize: 13, color: c.cfdi ? '#4C6B27' : '#8A5300', fontWeight: 600 }}>
                   {c.cfdi ? 'Timbrado' : 'Pendiente'}
                 </td>
               </tr>
@@ -93,9 +93,9 @@ export default function Financieros({
       <section style={{ ...S.tarjeta, padding: '18px 20px 20px', display: 'flex', flexDirection: 'column', gap: 16 }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'baseline', gap: 12 }}>
           <h2 style={S.h2}>Facturado y cobrado por mes</h2>
-          <div style={{ display: 'flex', gap: 16, fontSize: 13, color: '#5B6675' }}>
+          <div style={{ display: 'flex', gap: 16, fontSize: 13, color: '#6A6C5A' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-              <span style={{ width: 12, height: 12, borderRadius: 3, background: '#D8E0E6' }} /> Facturado
+              <span style={{ width: 12, height: 12, borderRadius: 3, background: '#D9D3C2' }} /> Facturado
             </span>
             <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <span style={{ width: 12, height: 12, borderRadius: 3, background: accent }} /> Cobrado
@@ -107,8 +107,8 @@ export default function Financieros({
           aria-label={`Cobranza por mes: ${finanzas.map((m) => `${m.nombre} ${m.pct} por ciento`).join(', ')}`}>
           {finanzas.map((m) => (
             <div key={m.id} style={S.par} title={`${m.nombre}: ${m.cobradoTexto} de ${m.facturadoTexto}`}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: m.pct === 100 ? '#0B6B5C' : '#5B6675' }}>{m.pct} %</span>
-              <div style={{ width: '100%', height: m.altoFacturado, background: '#D8E0E6', borderRadius: '5px 5px 0 0', position: 'relative' }}>
+              <span style={{ fontSize: 11, fontWeight: 700, color: m.pct === 100 ? '#4C6B27' : '#6A6C5A' }}>{m.pct} %</span>
+              <div style={{ width: '100%', height: m.altoFacturado, background: '#D9D3C2', borderRadius: '5px 5px 0 0', position: 'relative' }}>
                 <div style={{
                   position: 'absolute', left: 0, bottom: 0, width: '100%',
                   height: `${Math.round((m.cobrado / m.facturado) * 100)}%`,
@@ -116,12 +116,12 @@ export default function Financieros({
                   border: m.enCurso ? '1px dashed #FFFFFF' : 0, boxSizing: 'border-box'
                 }} />
               </div>
-              <span style={{ fontSize: 11, fontWeight: 600, color: '#5B6675' }}>{m.mes}</span>
+              <span style={{ fontSize: 11, fontWeight: 600, color: '#6A6C5A' }}>{m.mes}</span>
             </div>
           ))}
         </div>
 
-        <p style={{ margin: 0, fontSize: 13, color: '#5B6675' }}>
+        <p style={{ margin: 0, fontSize: 13, color: '#6A6C5A' }}>
           Noviembre va por el día 9 y dos mensualidades todavía no vencen, así que ese {pctCobranza} %
           no es comparable con los meses cerrados: se queda abajo hasta el día 15.
         </p>

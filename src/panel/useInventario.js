@@ -118,7 +118,7 @@ export function useInventario(anotar) {
       cobertura: coberturaTexto(a),
       // La barra se llena al doble del mínimo: ahí es donde deja de preocupar.
       barraPct: Math.min(100, Math.round(a.existencias / Math.max(1, a.minimo * 2) * 100)) + '%',
-      barraColor: (caducado || a.existencias === 0) ? '#B42318' : bajo ? '#B4541A' : t.fg,
+      barraColor: (caducado || a.existencias === 0) ? '#B42318' : bajo ? '#9A5B1C' : t.fg,
       sugerido: sugerir(a),
       solicitud: sol,
       solicitar: () => solicitar(a),
@@ -182,7 +182,7 @@ export function useInventario(anotar) {
     persona: m.rid ? byId[m.rid].name : '—',
     fechaTexto: fechaCorta(m.fecha),
     deltaTexto: (m.delta > 0 ? '+' : '−') + Math.abs(m.delta),
-    deltaFg: m.delta > 0 ? tone.ok.fg : m.tipo === 'Ajuste' ? tone.bad.fg : '#1B2430'
+    deltaFg: m.delta > 0 ? tone.ok.fg : m.tipo === 'Ajuste' ? tone.bad.fg : '#262A1B'
   }))
 
   const ajustar = (k) => {

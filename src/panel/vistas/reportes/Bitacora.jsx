@@ -1,20 +1,20 @@
 const TONOS = {
-  Residentes: { bg: '#E8EEF9', fg: '#2B4C8C' },
-  Medicación: { bg: '#E3F3EF', fg: '#0B6B5C' },
-  Enfermería: { bg: '#E3F3EF', fg: '#0B6B5C' },
-  Inventario: { bg: '#FFF1D6', fg: '#8A5300' },
-  Cocina: { bg: '#FFF1D6', fg: '#8A5300' },
-  Personal: { bg: '#EFE7F7', fg: '#5B3A8E' },
-  Facturación: { bg: '#FDE8E6', fg: '#B42318' },
-  Sistema: { bg: '#EEF1F4', fg: '#3D4652' }
+  Residentes: { bg: '#E9ECF2', fg: '#3C5578' },
+  Medicación: { bg: '#E8EEDB', fg: '#4C6B27' },
+  Enfermería: { bg: '#E8EEDB', fg: '#4C6B27' },
+  Inventario: { bg: '#FBF0D5', fg: '#8A5300' },
+  Cocina: { bg: '#FBF0D5', fg: '#8A5300' },
+  Personal: { bg: '#EDE8F0', fg: '#5F4473' },
+  Facturación: { bg: '#FBE7E3', fg: '#B42318' },
+  Sistema: { bg: '#EEEBE0', fg: '#474A3A' }
 }
 
 const S = {
-  aviso: { display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center', padding: '14px 16px', borderRadius: 12, fontSize: 14, background: '#E8EEF9', color: '#1F3A6B' },
+  aviso: { display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center', padding: '14px 16px', borderRadius: 12, fontSize: 14, background: '#E9ECF2', color: '#2D4260' },
   filtros: { display: 'flex', flexWrap: 'wrap', gap: 8 },
   filtro: { display: 'flex', alignItems: 'center', gap: 7, minHeight: 36, padding: '0 13px', borderRadius: 999, fontWeight: 600, fontSize: 13 },
   n: { fontSize: 12, fontWeight: 700, opacity: .75 },
-  tarjeta: { background: '#FFFFFF', border: '1px solid #E3E7EC', borderRadius: 14, overflowX: 'auto' },
+  tarjeta: { background: '#FFFFFF', border: '1px solid #E5E1D5', borderRadius: 14, overflowX: 'auto' },
   cabecera: { padding: '18px 20px 6px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'baseline', gap: 12 },
   h2: { margin: 0, fontSize: 18, fontWeight: 700 },
   chip: { padding: '4px 10px', borderRadius: 999, fontSize: 12, fontWeight: 700, whiteSpace: 'nowrap' },
@@ -41,9 +41,9 @@ export default function Bitacora({ accent, entradas, filtros, hoy, total, onExpo
           <button key={x.id} type="button" onClick={x.ir} aria-pressed={x.activo ? 'true' : 'false'}
             style={{
               ...S.filtro,
-              border: `1px solid ${x.activo ? '#12322F' : '#DCE1E7'}`,
-              background: x.activo ? '#12322F' : '#FFFFFF',
-              color: x.activo ? '#FFFFFF' : '#1B2430'
+              border: `1px solid ${x.activo ? '#3A4523' : '#DCD6C6'}`,
+              background: x.activo ? '#3A4523' : '#FFFFFF',
+              color: x.activo ? '#FFFFFF' : '#262A1B'
             }}>
             {x.label}<span style={S.n}>{x.n}</span>
           </button>
@@ -53,7 +53,7 @@ export default function Bitacora({ accent, entradas, filtros, hoy, total, onExpo
       <section style={S.tarjeta}>
         <div style={S.cabecera}>
           <h2 style={S.h2}>Movimientos</h2>
-          <span style={{ fontSize: 13, color: '#5B6675' }}>
+          <span style={{ fontSize: 13, color: '#6A6C5A' }}>
             {entradas.length} de {total} · {hoy} de hoy
           </span>
         </div>
@@ -74,19 +74,19 @@ export default function Bitacora({ accent, entradas, filtros, hoy, total, onExpo
                   <td style={{ whiteSpace: 'nowrap' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <span style={{ fontWeight: 600 }}>{e.hora}</span>
-                      <span style={{ fontSize: 13, color: '#5B6675' }}>{e.fechaTexto}</span>
+                      <span style={{ fontSize: 13, color: '#6A6C5A' }}>{e.fechaTexto}</span>
                     </div>
                   </td>
                   <td>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <span style={{ fontWeight: 600 }}>{e.quien}</span>
-                      <span style={{ fontSize: 13, color: '#5B6675' }}>{e.rol}</span>
+                      <span style={{ fontSize: 13, color: '#6A6C5A' }}>{e.rol}</span>
                     </div>
                   </td>
                   <td>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                       <span style={{ fontWeight: 600 }}>{e.accion}</span>
-                      <span style={{ fontSize: 13, color: '#3D4652' }}>{e.detalle}</span>
+                      <span style={{ fontSize: 13, color: '#474A3A' }}>{e.detalle}</span>
                     </div>
                   </td>
                   <td><span style={{ ...S.chip, background: t.bg, color: t.fg }}>{e.modulo}</span></td>

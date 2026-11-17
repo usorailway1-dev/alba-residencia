@@ -156,8 +156,8 @@ export function useCocina(anotar) {
       const n = reg ? porIdNivel[reg.nivel] : null
       return {
         tiempo: t, reg, nivel: n,
-        bg: n ? tone[n.tono].bg : '#F7F9FA',
-        fg: n ? tone[n.tono].fg : '#5B6675',
+        bg: n ? tone[n.tono].bg : '#F7F5EE',
+        fg: n ? tone[n.tono].fg : '#6A6C5A',
         abierta: celda?.rid === d.rid && celda?.tiempo === t.id,
         abrir: () => setCelda((c) => (c?.rid === d.rid && c?.tiempo === t.id ? null : { rid: d.rid, tiempo: t.id })),
         poner: (nivel) => registrar(d.rid, t.id, nivel)

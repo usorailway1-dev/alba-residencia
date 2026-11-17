@@ -8,12 +8,12 @@
 
 /* Los turnos reutilizan la paleta de estados (ok / info / gray). El nocturno
    necesitaba un cuarto color: es el morado que ya figura entre las opciones de
-   acento del prototipo (#7A4FB5), rebajado para fondo de etiqueta. */
+   acento del prototipo (#6B4F96), rebajado para fondo de etiqueta. */
 export const TURNOS = {
-  M: { clave: 'M', nombre: 'Matutino', horario: '07:00–15:00', inicio: '07:00', bg: '#E3F3EF', fg: '#0B6B5C' },
-  V: { clave: 'V', nombre: 'Vespertino', horario: '15:00–23:00', inicio: '15:00', bg: '#E8EEF9', fg: '#2B4C8C' },
-  N: { clave: 'N', nombre: 'Nocturno', horario: '23:00–07:00', inicio: '23:00', bg: '#EFE7F7', fg: '#5B3A8E' },
-  D: { clave: 'D', nombre: 'Descanso', horario: '—', inicio: null, bg: '#EEF1F4', fg: '#5B6675' }
+  M: { clave: 'M', nombre: 'Matutino', horario: '07:00–15:00', inicio: '07:00', bg: '#E8EEDB', fg: '#4C6B27' },
+  V: { clave: 'V', nombre: 'Vespertino', horario: '15:00–23:00', inicio: '15:00', bg: '#E9ECF2', fg: '#3C5578' },
+  N: { clave: 'N', nombre: 'Nocturno', horario: '23:00–07:00', inicio: '23:00', bg: '#EDE8F0', fg: '#5F4473' },
+  D: { clave: 'D', nombre: 'Descanso', horario: '—', inicio: null, bg: '#EEEBE0', fg: '#6A6C5A' }
 }
 export const CLAVES_TURNO = ['M', 'V', 'N', 'D']
 

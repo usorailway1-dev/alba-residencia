@@ -1,9 +1,9 @@
 const S = {
   kpiGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 },
-  kpi: { background: '#FFFFFF', border: '1px solid #E3E7EC', borderRadius: 14, padding: '18px 20px', display: 'flex', flexDirection: 'column', gap: 6 },
-  kpiLabel: { fontSize: 13, fontWeight: 600, color: '#5B6675' },
+  kpi: { background: '#FFFFFF', border: '1px solid #E5E1D5', borderRadius: 14, padding: '18px 20px', display: 'flex', flexDirection: 'column', gap: 6 },
+  kpiLabel: { fontSize: 13, fontWeight: 600, color: '#6A6C5A' },
   kpiValue: { fontSize: 28, fontWeight: 800 },
-  tabla: { background: '#FFFFFF', border: '1px solid #E3E7EC', borderRadius: 14, overflowX: 'auto' }
+  tabla: { background: '#FFFFFF', border: '1px solid #E5E1D5', borderRadius: 14, overflowX: 'auto' }
 }
 
 export default function Facturacion({ accent, bills, billTotal, billPaid, billDue }) {
@@ -16,7 +16,7 @@ export default function Facturacion({ accent, bills, billTotal, billPaid, billDu
         </div>
         <div style={S.kpi}>
           <span style={S.kpiLabel}>Cobrado</span>
-          <span style={{ ...S.kpiValue, color: '#0B6B5C' }}>{billPaid}</span>
+          <span style={{ ...S.kpiValue, color: '#4C6B27' }}>{billPaid}</span>
         </div>
         <div style={S.kpi}>
           <span style={S.kpiLabel}>Por cobrar</span>
@@ -41,7 +41,7 @@ export default function Facturacion({ accent, bills, billTotal, billPaid, billDu
                 </td>
                 <td>
                   {b.hasCfdi
-                    ? <span style={{ fontSize: 13, color: '#0B6B5C', fontWeight: 600 }}>Timbrado · PDF y XML</span>
+                    ? <span style={{ fontSize: 13, color: '#4C6B27', fontWeight: 600 }}>Timbrado · PDF y XML</span>
                     : <button type="button" onClick={b.emit} style={{ minHeight: 40, padding: '0 14px', borderRadius: 9, border: `1px solid ${accent}`, background: '#FFFFFF', color: accent, fontWeight: 600, fontSize: 13 }}>Emitir CFDI</button>}
                 </td>
               </tr>

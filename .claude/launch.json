@@ -2,10 +2,16 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "alba",
+      "name": "Casa Los Olivos (dev)",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 5180
+    },
+    {
+      "name": "Casa Los Olivos (build de produccion)",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start"],
+      "port": 8099
     }
   ]
 }

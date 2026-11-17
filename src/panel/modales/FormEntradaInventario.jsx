@@ -4,7 +4,7 @@ import { Campo, Selector, Rejilla } from './Campos.jsx'
 
 const S = {
   error: { fontSize: 13, fontWeight: 600, color: '#B42318' },
-  pista: { fontSize: 13, color: '#5B6675', lineHeight: 1.5 }
+  pista: { fontSize: 13, color: '#6A6C5A', lineHeight: 1.5 }
 }
 
 export default function FormEntradaInventario({ accent, articulos, onCerrar, onGuardar }) {

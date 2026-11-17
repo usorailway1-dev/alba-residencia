@@ -1,7 +1,32 @@
-# Alba — Residencia Los Álamos
+# Casa Los Olivos — Bienestar en cada etapa
 
 Web real (Vite + React) portada del prototipo de Claude Design **"Prototipo App Hospedaje Geriátrico"**.
 Datos ficticios de ejemplo, sin backend ni persistencia: el estado vive en memoria y se reinicia al recargar.
+
+> **Sobre los nombres.** El prototipo nació como "Alba — Residencia Los Álamos", las dos cosas
+> inventadas. Al adoptar la marca de Casa Los Olivos cambiaron el nombre y la paleta, pero **no**
+> la carpeta, el paquete ni el repositorio, que siguen siendo `alba-residencia`: renombrarlos
+> obligaría a reconectar el servicio de Railway sin cambiar nada de lo que se ve.
+> Los residentes, el personal y las cuentas siguen siendo inventados.
+
+## Marca
+
+La paleta sale del logo: verde oliva `#3A4523` de fondo, dorado `#C9A86A` en el trazo y crema
+`#F4F2EA` de papel. Está en `src/config.js`.
+
+El dorado es **decorativo y nunca lleva texto encima**: sobre blanco da 2.2:1 de contraste, muy
+por debajo del mínimo legible. Para botones y textos manda el oliva medio `#5A6B32`, que con
+blanco da 5.9:1. Los colores de aviso (rojo, ámbar) se quedaron como estaban a propósito: un
+semáforo tiene que seguir leyéndose como semáforo aunque la marca sea verde y dorada.
+
+El isotipo vive en `src/marca.js` y lo usan la barra lateral, el portal, los PDF y el favicon.
+Las hojas no tienen las puntas escritas a mano: se calculan a partir de la curva del tallo, con
+un ángulo respecto de la tangente, que es como crecen de verdad. `npm run verificar:marca`
+comprueba que ninguna hoja se salga de la casa y que las aceitunas no se toquen; `npm run
+favicon` regenera `public/favicon.svg` del mismo trazo.
+
+**No es el logo original vectorizado**, es un dibujo del mismo trazo. Si llega el SVG del
+diseñador, se sustituye en `src/marca.js` y las cuatro pantallas se enteran solas.
 
 ## Arrancar
 

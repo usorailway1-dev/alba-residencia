@@ -6,30 +6,35 @@
  * Va en un iframe oculto y no en una ventana nueva porque window.open() lo
  * bloquean los navegadores, y porque así la app no pierde su estado.
  */
+import { svgMarca } from '../marca.js'
+import { MARCA, LEMA } from '../config.js'
 
 const CSS = `
   @page { size: letter; margin: 18mm 16mm; }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: Figtree, system-ui, -apple-system, sans-serif; color: #1B2430; font-size: 11pt; line-height: 1.45; }
+  body { margin: 0; font-family: Figtree, system-ui, -apple-system, sans-serif; color: #262A1B; font-size: 11pt; line-height: 1.45; }
   .marca { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
-           border-bottom: 2px solid #12322F; padding-bottom: 10px; margin-bottom: 18px; }
+           border-bottom: 2px solid #3A4523; padding-bottom: 10px; margin-bottom: 18px; }
   .marca h1 { margin: 0; font-size: 17pt; }
-  .marca p { margin: 2px 0 0; font-size: 10pt; color: #5B6675; }
-  .sello { text-align: right; font-size: 9pt; color: #5B6675; white-space: nowrap; }
-  h2 { font-size: 12pt; margin: 20px 0 8px; padding-bottom: 4px; border-bottom: 1px solid #DCE1E7; }
+  .marca p { margin: 2px 0 0; font-size: 10pt; color: #6A6C5A; }
+  .sello { text-align: right; font-size: 9pt; color: #6A6C5A; white-space: nowrap; }
+  .lockup { display: flex; align-items: center; gap: 8px; justify-content: flex-end; margin-bottom: 4px; }
+  .lockup strong { font-size: 10.5pt; letter-spacing: .1em; text-transform: uppercase; color: #262A1B; }
+  .lema { font-size: 7pt; letter-spacing: .08em; text-transform: uppercase; color: #8A6B2A; }
+  h2 { font-size: 12pt; margin: 20px 0 8px; padding-bottom: 4px; border-bottom: 1px solid #DCD6C6; }
   table { width: 100%; border-collapse: collapse; font-size: 10pt; }
   th { text-align: left; font-size: 8.5pt; text-transform: uppercase; letter-spacing: .04em;
-       color: #5B6675; padding: 6px 8px; border-bottom: 1px solid #DCE1E7; background: #F8FAFB; }
-  td { padding: 6px 8px; border-bottom: 1px solid #EEF1F4; vertical-align: top; }
+       color: #6A6C5A; padding: 6px 8px; border-bottom: 1px solid #DCD6C6; background: #FAF8F1; }
+  td { padding: 6px 8px; border-bottom: 1px solid #EEEBE0; vertical-align: top; }
   .datos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 18px; }
-  .dato span { display: block; font-size: 8.5pt; text-transform: uppercase; letter-spacing: .04em; color: #5B6675; }
+  .dato span { display: block; font-size: 8.5pt; text-transform: uppercase; letter-spacing: .04em; color: #6A6C5A; }
   .dato strong { font-weight: 600; }
-  .nota { background: #F3F5F7; border-left: 3px solid #0E7C6B; padding: 10px 12px; border-radius: 0 6px 6px 0; }
-  .firma { margin-top: 6px; font-size: 9pt; color: #5B6675; }
+  .nota { background: #F4F2EA; border-left: 3px solid #5A6B32; padding: 10px 12px; border-radius: 0 6px 6px 0; }
+  .firma { margin-top: 6px; font-size: 9pt; color: #6A6C5A; }
   .mal { color: #B42318; font-weight: 600; }
   .ojo { color: #8A5300; font-weight: 600; }
-  .bien { color: #0B6B5C; }
-  .pie { margin-top: 26px; padding-top: 8px; border-top: 1px solid #DCE1E7; font-size: 8.5pt; color: #5B6675; }
+  .bien { color: #4C6B27; }
+  .pie { margin-top: 26px; padding-top: 8px; border-top: 1px solid #DCD6C6; font-size: 8.5pt; color: #6A6C5A; }
   tr { break-inside: avoid; }
   h2 { break-after: avoid; }
 `
@@ -39,6 +44,8 @@ export const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => (
   { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]
 ))
 
+/* En papel el isotipo va en verde sobre blanco: el dorado del logo impreso en
+   una láser se va a gris claro y se pierde. */
 const encabezado = (titulo, subtitulo, sello) => `
   <div class="marca">
     <div>
@@ -46,14 +53,20 @@ const encabezado = (titulo, subtitulo, sello) => `
       <p>${esc(subtitulo)}</p>
     </div>
     <div class="sello">
-      <strong>Residencia Los Álamos</strong><br>
+      <div class="lockup">
+        ${svgMarca({ tamano: 30, trazo: '#3A4523', relleno: '#8A6B2A' })}
+        <div>
+          <strong>${esc(MARCA)}</strong><br>
+          <span class="lema">${esc(LEMA)}</span>
+        </div>
+      </div>
       ${esc(sello)}
     </div>
   </div>`
 
 const pie = (quien, cuando) => `
   <div class="pie">
-    Documento generado por Alba el ${esc(cuando)} · ${esc(quien)}.<br>
+    Documento generado el ${esc(cuando)} · ${esc(quien)} · ${esc(MARCA)}.<br>
     Datos de prueba de un prototipo. No constituye un documento oficial.
   </div>`
 
@@ -160,7 +173,7 @@ export function htmlCaratula(x) {
       </tr>`).join('')}
     </tbody>
   </table>
-  <p style="font-size:9.5pt;color:#5B6675;margin:8px 0 0">
+  <p style="font-size:9.5pt;color:#6A6C5A;margin:8px 0 0">
     Noviembre lleva ${esc(x.transcurridos)} de ${esc(x.diasMes)} días. Las cuentas del mes son parciales;
     la columna comparable está normalizada por días-residente.
   </p>
@@ -198,7 +211,7 @@ export function htmlBitacora(x) {
     <tbody>${x.entradas.map((e) => `
       <tr>
         <td style="white-space:nowrap">${esc(e.fechaTexto)}<br>${esc(e.hora)}</td>
-        <td>${esc(e.quien)}<br><span style="color:#5B6675">${esc(e.rol)}</span></td>
+        <td>${esc(e.quien)}<br><span style="color:#6A6C5A">${esc(e.rol)}</span></td>
         <td><strong>${esc(e.accion)}</strong><br>${esc(e.detalle)}</td>
         <td>${esc(e.modulo)}</td>
       </tr>`).join('')}

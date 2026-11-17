@@ -17,7 +17,7 @@ import FormEvolucion from './modales/FormEvolucion.jsx'
 import FormResidente from './modales/FormResidente.jsx'
 
 const S = {
-  shell: { minHeight: '100vh', display: 'flex', flexWrap: 'wrap', background: '#F3F5F7' },
+  shell: { minHeight: '100vh', display: 'flex', flexWrap: 'wrap', background: '#F4F2EA' },
   main: { flex: '999 1 560px', minWidth: 0, padding: '24px 32px 40px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: 24 }
 }
 
@@ -27,7 +27,7 @@ export default function Panel() {
 
   return (
     <div style={S.shell}>
-      <Sidebar accent={v.accent} navMain={v.navMain} navMore={v.navMore} />
+      <Sidebar navMain={v.navMain} navMore={v.navMore} />
       <main style={S.main}>
         <Header
           pageTitle={v.pageTitle}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" rx="7" fill="#3A4523"/>
+  <g transform="translate(16 16) scale(0.78) translate(-16 -16)"
+     fill="none" stroke="#C9A86A" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.6 29.2V13.1L16 3.4l11.4 9.7v16.1"/>
+    <path d="M10.2 25.8C13.4 22.4 17.2 17.8 21 13.2"/>
+    <path d="M11.21 23.97Q9.6 21.71 10.35 19.04Q11.96 21.3 11.21 23.97Z" fill="#C9A86A" stroke="#C9A86A" stroke-width="0.9"/>
+    <path d="M14.03 22.29Q16.65 21.13 19.23 22.38Q16.61 23.53 14.03 22.29Z" fill="#C9A86A" stroke="#C9A86A" stroke-width="0.9"/>
+    <path d="M15.54 18.98Q13.94 16.77 14.71 14.15Q16.31 16.36 15.54 18.98Z" fill="#C9A86A" stroke="#C9A86A" stroke-width="0.9"/>
+    <path d="M18.66 16.81Q20.86 15.63 23.15 16.64Q20.95 17.82 18.66 16.81Z" fill="#C9A86A" stroke="#C9A86A" stroke-width="0.9"/>
+    <path d="M20.16 13.9Q19.48 11.96 20.76 10.35Q21.45 12.29 20.16 13.9Z" fill="#C9A86A" stroke="#C9A86A" stroke-width="0.9"/>
+    <circle cx="9.92" cy="25.75" r="1.75" fill="#C9A86A" stroke="none"/>
+    <circle cx="13.22" cy="21.63" r="1.55" fill="#C9A86A" stroke="none"/>
+  </g>
+</svg>

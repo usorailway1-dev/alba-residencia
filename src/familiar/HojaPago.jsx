@@ -6,15 +6,15 @@ import { datosSpei } from '../data/alba.js'
 const S = {
   fondo: { position: 'absolute', inset: 0, zIndex: 30, background: 'rgba(18,50,47,.45)', display: 'flex', alignItems: 'flex-end' },
   hoja: { width: '100%', maxHeight: '92%', overflowY: 'auto', background: '#FFFFFF', borderRadius: '18px 18px 0 0', padding: '14px 18px 20px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: 14 },
-  asa: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, background: '#DCE1E7' },
+  asa: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, background: '#DCD6C6' },
   titulo: { margin: 0, fontSize: 18, fontWeight: 800 },
-  nota: { fontSize: 13, color: '#5B6675', lineHeight: 1.5 },
-  fila: { display: 'flex', flexDirection: 'column', gap: 2, paddingBottom: 10, borderBottom: '1px solid #EEF1F4' },
-  etiqueta: { fontSize: 12, fontWeight: 600, color: '#5B6675' },
+  nota: { fontSize: 13, color: '#6A6C5A', lineHeight: 1.5 },
+  fila: { display: 'flex', flexDirection: 'column', gap: 2, paddingBottom: 10, borderBottom: '1px solid #EEEBE0' },
+  etiqueta: { fontSize: 12, fontWeight: 600, color: '#6A6C5A' },
   valor: { fontSize: 15, fontWeight: 600, wordBreak: 'break-all' },
-  copiar: { alignSelf: 'flex-start', minHeight: 36, padding: '0 12px', borderRadius: 9, border: '1px solid #DCE1E7', background: '#FFFFFF', color: '#1B2430', fontWeight: 600, fontSize: 13, marginTop: 4 },
-  primario: { minHeight: 48, borderRadius: 12, border: 0, background: '#0E7C6B', color: '#FFFFFF', fontWeight: 700, fontSize: 15 },
-  secundario: { minHeight: 44, borderRadius: 12, border: '1px solid #DCE1E7', background: '#FFFFFF', color: '#1B2430', fontWeight: 600, fontSize: 14 }
+  copiar: { alignSelf: 'flex-start', minHeight: 36, padding: '0 12px', borderRadius: 9, border: '1px solid #DCD6C6', background: '#FFFFFF', color: '#262A1B', fontWeight: 600, fontSize: 13, marginTop: 4 },
+  primario: { minHeight: 48, borderRadius: 12, border: 0, background: '#5A6B32', color: '#FFFFFF', fontWeight: 700, fontSize: 15 },
+  secundario: { minHeight: 44, borderRadius: 12, border: '1px solid #DCD6C6', background: '#FFFFFF', color: '#262A1B', fontWeight: 600, fontSize: 14 }
 }
 
 const FILAS = [
@@ -71,7 +71,7 @@ export default function HojaPago({ onCerrar, onTransferido }) {
         ))}
 
         {copiado && (
-          <span role="status" style={{ padding: '10px 12px', borderRadius: 10, background: '#E3F3EF', color: '#0B6B5C', fontSize: 13, fontWeight: 600 }}>
+          <span role="status" style={{ padding: '10px 12px', borderRadius: 10, background: '#E8EEDB', color: '#4C6B27', fontSize: 13, fontWeight: 600 }}>
             {copiado}
           </span>
         )}

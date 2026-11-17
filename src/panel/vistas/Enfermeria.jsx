@@ -1,14 +1,14 @@
 import { useState } from 'react'
 
 const S = {
-  tablaCard: { flex: '3 1 520px', minWidth: 0, background: '#FFFFFF', border: '1px solid #E3E7EC', borderRadius: 14, overflowX: 'auto' },
+  tablaCard: { flex: '3 1 520px', minWidth: 0, background: '#FFFFFF', border: '1px solid #E5E1D5', borderRadius: 14, overflowX: 'auto' },
   tablaHead: { padding: '18px 20px 6px', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 12 },
-  form: { flex: '2 1 300px', minWidth: 0, background: '#FFFFFF', border: '1px solid #E3E7EC', borderRadius: 14, padding: 20, display: 'flex', flexDirection: 'column', gap: 14 },
-  label: { display: 'flex', flexDirection: 'column', gap: 6, fontSize: 13, fontWeight: 600, color: '#3D4652' },
-  input: { height: 44, border: '1px solid #DCE1E7', borderRadius: 9, padding: '0 10px', boxSizing: 'border-box' },
-  select: { height: 44, border: '1px solid #DCE1E7', borderRadius: 9, padding: '0 10px', background: '#FFFFFF', color: '#1B2430' },
-  textarea: { border: '1px solid #DCE1E7', borderRadius: 9, padding: 10, resize: 'vertical' },
-  aviso: { padding: '10px 12px', borderRadius: 9, background: '#E3F3EF', color: '#0B6B5C', fontSize: 13, fontWeight: 600, lineHeight: 1.45 }
+  form: { flex: '2 1 300px', minWidth: 0, background: '#FFFFFF', border: '1px solid #E5E1D5', borderRadius: 14, padding: 20, display: 'flex', flexDirection: 'column', gap: 14 },
+  label: { display: 'flex', flexDirection: 'column', gap: 6, fontSize: 13, fontWeight: 600, color: '#474A3A' },
+  input: { height: 44, border: '1px solid #DCD6C6', borderRadius: 9, padding: '0 10px', boxSizing: 'border-box' },
+  select: { height: 44, border: '1px solid #DCD6C6', borderRadius: 9, padding: '0 10px', background: '#FFFFFF', color: '#262A1B' },
+  textarea: { border: '1px solid #DCD6C6', borderRadius: 9, padding: 10, resize: 'vertical' },
+  aviso: { padding: '10px 12px', borderRadius: 9, background: '#E8EEDB', color: '#4C6B27', fontSize: 13, fontWeight: 600, lineHeight: 1.45 }
 }
 
 const VACIO = { pa: '', fc: '', t: '', glu: '', nota: '' }
@@ -41,7 +41,7 @@ export default function Enfermeria({ accent, vitals, residentes, onGuardar, ahor
       <section style={S.tablaCard}>
         <div style={S.tablaHead}>
           <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700 }}>Signos vitales · toma de las 07:00</h2>
-          <span style={{ fontSize: 13, color: '#5B6675' }}>Valores fuera de rango resaltados</span>
+          <span style={{ fontSize: 13, color: '#6A6C5A' }}>Valores fuera de rango resaltados</span>
         </div>
         <table style={{ minWidth: 640 }}>
           <thead>
@@ -79,7 +79,7 @@ export default function Enfermeria({ accent, vitals, residentes, onGuardar, ahor
           <textarea rows="3" value={f.nota} onChange={set('nota')} placeholder="Observaciones, ingesta, ánimo, sueño…" style={S.textarea} />
         </label>
         {guardado && (
-          <span style={{ ...S.aviso, background: guardado.ok ? '#E3F3EF' : '#FFF1D6', color: guardado.ok ? '#0B6B5C' : '#8A5300' }} role="status">
+          <span style={{ ...S.aviso, background: guardado.ok ? '#E8EEDB' : '#FBF0D5', color: guardado.ok ? '#4C6B27' : '#8A5300' }} role="status">
             {guardado.texto}
           </span>
         )}

@@ -2,11 +2,11 @@ import { useEffect, useRef } from 'react'
 
 const S = {
   fondo: { position: 'fixed', inset: 0, zIndex: 100, background: 'rgba(18,50,47,.45)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20, boxSizing: 'border-box' },
-  caja: { width: '100%', maxWidth: 560, maxHeight: '90dvh', overflowY: 'auto', background: '#FFFFFF', border: '1px solid #E3E7EC', borderRadius: 16, padding: 24, boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: 16, boxShadow: '0 24px 60px rgba(0,0,0,.22)' },
+  caja: { width: '100%', maxWidth: 560, maxHeight: '90dvh', overflowY: 'auto', background: '#FFFFFF', border: '1px solid #E5E1D5', borderRadius: 16, padding: 24, boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: 16, boxShadow: '0 24px 60px rgba(0,0,0,.22)' },
   titulo: { margin: 0, fontSize: 20, fontWeight: 800, letterSpacing: '-.01em' },
-  desc: { fontSize: 14, color: '#5B6675', lineHeight: 1.5 },
+  desc: { fontSize: 14, color: '#6A6C5A', lineHeight: 1.5 },
   pie: { display: 'flex', justifyContent: 'flex-end', gap: 10, paddingTop: 4 },
-  cancelar: { minHeight: 44, padding: '0 18px', borderRadius: 10, border: '1px solid #DCE1E7', background: '#FFFFFF', color: '#1B2430', fontWeight: 600, fontSize: 14 },
+  cancelar: { minHeight: 44, padding: '0 18px', borderRadius: 10, border: '1px solid #DCD6C6', background: '#FFFFFF', color: '#262A1B', fontWeight: 600, fontSize: 14 },
   guardar: { minHeight: 44, padding: '0 18px', borderRadius: 10, border: 0, color: '#FFFFFF', fontWeight: 700, fontSize: 14 }
 }
 
